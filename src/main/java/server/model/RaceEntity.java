@@ -8,8 +8,8 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-@Entity(name = "race")
-@Table(name = "race")
+@Entity(name = "RACE")
+@Table(name = "RACE")
 public class RaceEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
