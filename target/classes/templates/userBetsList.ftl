@@ -12,13 +12,15 @@
         </tr>
         </thead>
         <tbody>
-        <#list bets as bet>
-            <tr>
-                <td>${bet.date}</td>
-                <td>${bet.amount}</td>
-                <td>${bet.rate}</td>
-            </tr>
-        </#list>
+        <#if bets??>
+            <#list bets as bet>
+                <tr>
+                    <td>${bet.date}</td>
+                    <td>${bet.amount}</td>
+                    <td>${bet.rate}</td>
+                </tr>
+            </#list>
+        </#if>
         </tbody>
     </table>
 </@c.page>

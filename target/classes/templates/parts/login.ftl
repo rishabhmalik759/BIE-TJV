@@ -18,7 +18,9 @@
         </select>
     </div>
     </#if>
-    <input type="hidden" name="_csrf" value="${_csrf.token}" />
+    <#if _csrf??>
+        <input type="hidden" name="_csrf" value="${_csrf.token}" />
+    </#if>
     <#if !isRegisterForm><a href="/registration">Registration</a></#if>
     <button class="btn btn-primary" type="submit">  <#if isRegisterForm>Register<#else>Sign In</#if></button>
 </form>
@@ -26,12 +28,17 @@
 
 <#include "security.ftl">
 <#macro logout>
-<form action="/logout" method="post">
-    <input type="hidden" name="_csrf" value="${_csrf.token}" />
+    <form action="/logout" method="post">
+    <#if _csrf??>
+        <input type="hidden" name="_csrf" value="${_csrf.token}" />
+    </#if>
     <#if known> <button class="btn btn-primary" type="submit">Sign Out</button> </#if>
 </form>
 <form action="/login" method="get">
+    <#if _csrf??>
     <input type="hidden" name="_csrf" value="${_csrf.token}" />
+    </#if>
+
     <#if !known> <button class="btn btn-primary" type="submit">Sign In</button> </#if>
 </form>
 </#macro>

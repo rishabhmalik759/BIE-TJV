@@ -15,17 +15,19 @@
     </tr>
     </thead>
     <tbody>
-    <#list users as user>
-        <tr>
-            <td>${user.username}</td>
-            <#if user.isRacer()> <td> Racer</td>
-            <#elseif user.isAdmin()> <td> Admin </td>
+    <#if users??>
+        <#list users as user>
+            <tr>
+                <td>${user.username}</td>
+                <#if user.isRacer()> <td> Racer</td>
+                <#elseif user.isAdmin()> <td> Admin </td>
                 <#else> <td> User </td>
-            </#if>
-            <td>${user.account}</td>
-            <td><a href="/users/${user.id}">edit</a></td>
-        </tr>
-    </#list>
+                </#if>
+                <td>${user.account}</td>
+                <td><a href="/users/${user.id}">edit</a></td>
+            </tr>
+        </#list>
+    </#if>
     </tbody>
 </table>
 </@c.page>

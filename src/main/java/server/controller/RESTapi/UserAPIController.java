@@ -25,6 +25,7 @@ public class UserAPIController {
     @GetMapping(value = "/{id}", produces = "application/json")
     public ResponseEntity<?> getUser(@PathVariable(value = "id") Long id) {
         try {
+
             return ResponseEntity.ok(userService.findById(id));
         } catch (NotFoundException e) {
             //e.printStackTrace();

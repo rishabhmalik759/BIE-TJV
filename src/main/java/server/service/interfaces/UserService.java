@@ -2,11 +2,13 @@ package server.service.interfaces;
 
 import javassist.NotFoundException;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.stereotype.Service;
 import server.model.UserEntity;
 
 import javax.naming.directory.InvalidAttributesException;
 import java.util.List;
 
+@Service
 public interface UserService extends UserDetailsService {
     List<UserEntity> findAll();
 

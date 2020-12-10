@@ -15,13 +15,13 @@ public class RaceEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "RACE_ID", nullable = false)
     private Long id;
-    @Column(name = "DATE", nullable = false)
+    @Column(name = "DATE_R", nullable = false)
     @JsonFormat(pattern="dd-MM-yyyy")
     @Temporal(TemporalType.DATE)
     private Date date;
-    @Column(name = "FROM", nullable = false)
+    @Column(name = "FROM_R", nullable = false)
     private String from;
-    @Column(name = "TO", nullable = false)
+    @Column(name = "TO_R", nullable = false)
     private String to;
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "RACE_ID", nullable = true)

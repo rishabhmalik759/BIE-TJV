@@ -9,7 +9,7 @@ import java.util.Optional;
 
 @Repository
 public interface RaceRepository extends JpaRepository<RaceEntity, Long> {
-    @Query("select r from race r where r.date>=current_date")
+    @Query(value = "select DATE_R from RACE where DATE_R>=current_date", nativeQuery = true)
     Optional<RaceEntity> getNextRace();
 }
 

@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public interface StreetRacerRepository extends JpaRepository<StreetRacerEntity, Long> {
-    @Query("select r from street_racer r order by win_counter")
+    @Query(value = "select * from street_racer order by win_counter", nativeQuery = true)
     List<StreetRacerEntity> findAllSortedByWins();
 }
 

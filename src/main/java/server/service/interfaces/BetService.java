@@ -1,12 +1,14 @@
 package server.service.interfaces;
 
 import javassist.NotFoundException;
+import org.springframework.stereotype.Service;
 import server.model.BetEntity;
 import server.model.UserEntity;
 
 import javax.naming.directory.InvalidAttributesException;
 import java.util.List;
 
+@Service
 public interface BetService {
     List<BetEntity> findAll();
 

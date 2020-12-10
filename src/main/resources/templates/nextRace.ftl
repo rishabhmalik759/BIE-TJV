@@ -19,14 +19,16 @@
         </tr>
         </thead>
         <tbody>
-        <#list registrations as registration>
-            <tr>
-                <td>${registration.racer.user.username}</td>
-                <td>${registration.getCar().brand} ${registration.getCar().model}</td>
-                <td><a href="/racers/stats/${registration.racer.id}">racer statistics</a></td>
-                <td><a href="/makeBet/${registration.id}">make a bet</a></td>
-            </tr>
-        </#list>
+        <#if registrations??>
+            <#list registrations as registration>
+                <tr>
+                    <td>${registration.racer.user.username}</td>
+                    <td>${registration.getCar().brand} ${registration.getCar().model}</td>
+                    <td><a href="/racers/stats/${registration.racer.id}">racer statistics</a></td>
+                    <td><a href="/makeBet/${registration.id}">make a bet</a></td>
+                </tr>
+            </#list>
+        </#if>
         </tbody>
     </table>
     <#else> <h1>Sorry :(</h1>
